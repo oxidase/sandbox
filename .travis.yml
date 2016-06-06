@@ -7,7 +7,10 @@ branches:
     - master
 
 matrix:
-    # Release Builds
+  fast_finish: true
+
+  include:
+
     - os: linux
       compiler: "gcc-5-release"
       addons: &gcc5
