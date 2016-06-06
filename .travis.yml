@@ -23,5 +23,5 @@ before_install:
   - make
 
 script:
-  - ./sanbox
+  - ./sandbox
 
