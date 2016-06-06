@@ -28,6 +28,10 @@ matrix:
       env: CCOMPILER='gcc-5' CXXCOMPILER='g++-5 -m32' BUILD_TYPE='Release'
 
 before_install:
+  # Make sure apt is up to date.
+  - sudo apt-get update -qq
+  # For native code tests, we need some additional libraries if we are in a 64-bit environment.
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes gcc-multilib g++-5-multilib > /dev/null; fi
   - make
 
 script:
