@@ -34,10 +34,12 @@ matrix:
 
 before_install:
   # Make sure apt is up to date.
+  #- sudo add-apt-repository --remove ppa:whatever/ppa
   - dpkg --print-architecture
   - dpkg --print-foreign-architectures
-  - dpkg --add-architecture i386
-  - sudo apt-get update -qq
+  - sudo dpkg --add-architecture i386
+  - dpkg --print-foreign-architectures
+  - sudo apt-get update -m || true
   # For native code tests, we need some additional libraries if we are in a 64-bit environment.
   #- if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libboost-all-dev:i386 ; fi
   - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
