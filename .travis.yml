@@ -40,6 +40,9 @@ before_install:
   - dpkg --print-foreign-architectures
   - sudo dpkg --add-architecture i386
   - dpkg --print-foreign-architectures
+  - echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty main universe multiverse restricted" >> /etc/apt/sources.list
+  - echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates main universe multiverse restricted" >> /etc/apt/sources.list
+
   - sudo apt-get update -m || true
   # For native code tests, we need some additional libraries if we are in a 64-bit environment.
   - if [ `uname -m` = x86_64 ]; then sudo apt-get install --force-yes libbz2-dev:i386 ; fi
