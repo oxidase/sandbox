@@ -24,7 +24,8 @@ matrix:
       addons: &gcc5
         apt:
           sources: ['ubuntu-toolchain-r-test']
-          packages: ['g++-5-multilib', 'libbz2-dev:i386', 'libstxxl-dev:i386', 'libstxxl1:i386', 'libxml2-dev:i386', 'libzip-dev:i386', 'lua5.1:i386', 'liblua5.1-0-dev:i386', 'libtbb-dev:i386', 'libgdal-dev:i386', 'libluabind-dev:i386', 'libboost-all-dev:i386', 'ccache']
+          #packages: ['g++-5-multilib', 'libbz2-dev:i386', 'libstxxl-dev:i386', 'libstxxl1:i386', 'libxml2-dev:i386', 'libzip-dev:i386', 'lua5.1:i386', 'liblua5.1-0-dev:i386', 'libtbb-dev:i386', 'libgdal-dev:i386', 'libluabind-dev:i386', 'libboost-all-dev:i386', 'ccache']
+          packages: ['g++-5-multilib', 'libbz2-dev:i386', 'libxml2-dev:i386', 'lua5.1:i386', 'liblua5.1-0-dev:i386', 'libboost-all-dev:i386']
       env: CCOMPILER='gcc-5' CXXCOMPILER='g++-5 -m32' BUILD_TYPE='Release'
 
 before_install:
