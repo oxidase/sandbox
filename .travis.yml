@@ -25,10 +25,11 @@ matrix:
 
     - os: linux
       compiler: "gcc-5-release-32bit"
-      env: ARCH='i386'
-      env: REPO='ppa:ubuntu-toolchain-r/test'
-      env: DEPS='g++-5-multilib libxml2-dev:i386 libzip-dev:i386 libbz2-dev:i386 libstxxl-dev:i386 libtbb-dev:i386 lua5.2:i386 liblua5.2-dev:i386 libluabind-dev:i386 libboost-date-time-dev:i386 libboost-filesystem-dev:i386 libboost-iostreams-dev:i386 libboost-program-options-dev:i386 libboost-regex-dev:i386 libboost-system-dev:i386 libboost-thread-dev:i386 libboost-test-dev:i386'
-      env: CCOMPILER='gcc-5' CXXCOMPILER='g++-5 -m32' BUILD_TYPE='Release'
+      env: >
+        ARCH='i386'
+        REPO='ppa:ubuntu-toolchain-r/test'
+        DEPS='g++-5-multilib libxml2-dev:i386 libzip-dev:i386 libbz2-dev:i386 libstxxl-dev:i386 libtbb-dev:i386 lua5.2:i386 liblua5.2-dev:i386 libluabind-dev:i386 libboost-date-time-dev:i386 libboost-filesystem-dev:i386 libboost-iostreams-dev:i386 libboost-program-options-dev:i386 libboost-regex-dev:i386 libboost-system-dev:i386 libboost-thread-dev:i386 libboost-test-dev:i386'
+        CCOMPILER='gcc-5 -m32' CXXCOMPILER='g++-5 -m32' BUILD_TYPE='Release'
 
 before_install:
   # Make sure apt is up to date.
