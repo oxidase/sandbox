@@ -36,7 +36,7 @@ before_install:
   # Make sure apt is up to date.
   - sudo apt-get update -qq
   # For native code tests, we need some additional libraries if we are in a 64-bit environment.
-  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libboost-all-dev:i386 > /dev/null; fi
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libboost-all-dev:i386 ; fi
   - make
 
 script:
