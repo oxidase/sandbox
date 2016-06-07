@@ -41,7 +41,7 @@ before_install:
   - dpkg --print-foreign-architectures
   - sudo apt-get update -m || true
   # For native code tests, we need some additional libraries if we are in a 64-bit environment.
-  - if [ `uname -m` = x86_64 ]; then sudo apt-get install -qq --force-yes libstxxl-dev:i386 libboost-all-dev:i386 ; fi
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install --force-yes libbz2-dev:i386 ; fi
   - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
   - aptitude search boost
   - make
