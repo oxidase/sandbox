@@ -40,12 +40,13 @@ before_install:
   - dpkg --print-foreign-architectures
   - sudo dpkg --add-architecture i386
   - dpkg --print-foreign-architectures
+  - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
   # - echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty main universe multiverse restricted" >> /etc/apt/sources.list
   # - echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty-updates main universe multiverse restricted" >> /etc/apt/sources.list
 
-  - sudo apt-get update -m || true
+  - sudo apt-get update --yes -m || true
   # For native code tests, we need some additional libraries if we are in a 64-bit environment.
-  - if [ `uname -m` = x86_64 ]; then sudo apt-get install --force-yes g++-5-multilib libbz2-dev:i386 ; fi
+  - if [ `uname -m` = x86_64 ]; then sudo apt-get install --yes --force-yes g++-5-multilib libbz2-dev:i386 ; fi
   - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
   - aptitude search boost
   - make
