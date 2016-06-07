@@ -35,6 +35,7 @@ matrix:
 before_install:
   # Make sure apt is up to date.
   #- sudo add-apt-repository --remove ppa:whatever/ppa
+  - sudo rm -rf /etc/apt/sources.list.d/*
   - dpkg --print-architecture
   - dpkg --print-foreign-architectures
   - sudo dpkg --add-architecture i386
